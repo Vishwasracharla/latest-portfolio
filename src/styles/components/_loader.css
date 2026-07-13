@@ -1,0 +1,73 @@
+.loader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-loader);
+  background: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.loader-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(2rem, 6vw, 4.5rem);
+  letter-spacing: 0.02em;
+  display: flex;
+  overflow: hidden;
+}
+
+.loader-name .char {
+  display: inline-block;
+  transform: translateY(110%);
+  opacity: 0;
+}
+
+.loader-role {
+  margin-top: var(--space-sm);
+  color: var(--color-text-secondary);
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  opacity: 0;
+}
+
+.loader-progress {
+  margin-top: var(--space-lg);
+  width: min(320px, 60vw);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.loader-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: var(--gradient-aurora);
+  background-size: 200% 100%;
+}
+
+.loader-percent {
+  margin-top: var(--space-xs);
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+
+.loader-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-loader) - 1);
+  background: var(--color-bg);
+  transform: scaleY(0);
+  transform-origin: bottom;
+}

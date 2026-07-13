@@ -1,0 +1,32 @@
+.code-transform {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code-block {
+  width: min(680px, 90vw);
+  padding: var(--space-md);
+  font-family: 'Space Grotesk', monospace;
+  font-size: clamp(0.95rem, 1.6vw, 1.3rem);
+  line-height: 1.9;
+  color: var(--color-cyan);
+  opacity: 0;
+}
+
+.code-block .kw {
+  color: var(--color-purple);
+}
+.code-block .str {
+  color: #a7f3d0;
+}
+.code-block .punc {
+  color: var(--color-text-secondary);
+}
+
+.code-block .code-line {
+  opacity: 0;
+  transform: translateY(16px);
+}

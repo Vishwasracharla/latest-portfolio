@@ -1,0 +1,58 @@
+:root {
+  /* Palette */
+  --color-bg: #03050c;
+  --color-bg-soft: #070a13;
+  --color-purple: #a855f7;
+  --color-blue: #3b82f6;
+  --color-cyan: #06b6d4;
+  --color-white: #ffffff;
+  --color-text-secondary: #94a3b8;
+
+  --gradient-primary: linear-gradient(135deg, #a855f7, #3b82f6);
+  --gradient-accent: linear-gradient(135deg, #3b82f6, #06b6d4);
+  --gradient-aurora: linear-gradient(120deg, #a855f7, #3b82f6, #06b6d4);
+
+  --glow-purple: 0 0 25px rgba(168, 85, 247, 0.5), 0 0 50px rgba(168, 85, 247, 0.25);
+  --glow-blue: 0 0 25px rgba(59, 130, 246, 0.45), 0 0 50px rgba(59, 130, 246, 0.2);
+  --glow-cyan: 0 0 25px rgba(6, 182, 212, 0.45), 0 0 50px rgba(6, 182, 212, 0.2);
+
+  --glass-bg: rgba(7, 10, 19, 0.6);
+  --glass-border: rgba(168, 85, 247, 0.15);
+  --glass-blur: 16px;
+
+  /* Type scale */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --fs-hero: clamp(3rem, 8vw, 8rem);
+  --fs-h1: clamp(2.5rem, 5vw, 5rem);
+  --fs-h2: clamp(2rem, 4vw, 3.5rem);
+  --fs-h3: clamp(1.5rem, 2.5vw, 2.25rem);
+  --fs-body-lg: clamp(1.125rem, 1.4vw, 1.375rem);
+  --fs-body: clamp(1rem, 1.2vw, 1.125rem);
+  --fs-small: clamp(0.8rem, 0.9vw, 0.9rem);
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+  --space-2xl: 12rem;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.83, 0, 0.17, 1);
+  --dur-fast: 0.3s;
+  --dur-med: 0.6s;
+  --dur-slow: 1.2s;
+
+  /* Z-index scale */
+  --z-bg: 0;
+  --z-content: 10;
+  --z-nav: 100;
+  --z-cursor: 200;
+  --z-loader: 1000;
+
+  --container-width: min(1400px, 92vw);
+}

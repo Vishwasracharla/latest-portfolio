@@ -1,0 +1,289 @@
+/* ═══════ 09 Mobile Responsive Preview ═══════ */
+.mobile-preview {
+  position: relative;
+  background: radial-gradient(circle at 50% 30%, rgba(168, 85, 247, 0.06) 0%, transparent 60%),
+              #050816;
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.phones-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: var(--space-xl);
+  perspective: 1200px;
+  flex-wrap: wrap;
+}
+
+/* Smartphone Frame Mockup */
+.phone-frame {
+  position: relative;
+  width: 190px;
+  height: 380px;
+  background: rgba(10, 15, 36, 0.75);
+  border: 2px solid rgba(168, 85, 247, 0.35);
+  border-radius: 32px;
+  box-shadow: 0 20px 45px rgba(0,0,0,0.65), 0 0 20px rgba(168, 85, 247, 0.15);
+  overflow: hidden;
+  transition: transform 0.5s var(--ease-out), border-color 0.5s var(--ease-out), box-shadow 0.5s var(--ease-out);
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+.phone-frame:hover {
+  transform: translateY(-10px) scale(1.02);
+  border-color: var(--color-cyan);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 30px rgba(6, 182, 212, 0.3);
+}
+
+.phone-notch {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 14px;
+  background: #03050c;
+  border-radius: 100px;
+  z-index: 10;
+}
+
+.phone-screen {
+  position: absolute;
+  inset: 6px;
+  border-radius: 26px;
+  background: #03050c;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mini Phone UIs */
+.mock-phone-ui {
+  width: 100%;
+  height: 100%;
+  padding: 30px 12px 15px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-family: var(--font-body);
+  position: relative;
+}
+
+.mock-p-nav {
+  font-size: 0.55rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Phone 1: Hero UI */
+.mock-phone-hero {
+  background: radial-gradient(circle at 50% 20%, rgba(168,85,247,0.15), transparent 70%);
+  align-items: center;
+  justify-content: space-between;
+}
+.mock-p-logo {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-purple);
+}
+.mock-p-hero-title {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.2;
+}
+.mock-p-hero-title span {
+  background: var(--gradient-aurora);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.mock-p-role {
+  font-size: 0.45rem;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  font-weight: 700;
+  margin-top: 2px;
+}
+.mock-p-avatar-wrap {
+  width: 90px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 10px;
+}
+.mock-p-avatar-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.mock-p-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.mock-p-btn {
+  font-size: 0.5rem;
+  font-weight: 700;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: var(--color-purple);
+  box-shadow: 0 0 10px rgba(168,85,247,0.4);
+}
+
+/* Phone 2: About UI */
+.mock-phone-about {
+  background: radial-gradient(circle at 50% 80%, rgba(6,182,212,0.1), transparent 70%);
+}
+.mock-p-hologram {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(168,85,247,0.25);
+  border-radius: 12px;
+  margin: 10px auto;
+  overflow: hidden;
+}
+.mock-p-hologram img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(1) sepia(1) hue-rotate(240deg) saturate(3) brightness(0.85);
+}
+.mock-p-scanline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.3) 50%);
+  background-size: 100% 3px;
+}
+.mock-p-terminal {
+  flex-grow: 1;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 8px;
+  padding: 10px;
+  font-family: var(--font-mono);
+  font-size: 0.5rem;
+  color: var(--color-cyan);
+  line-height: 1.6;
+}
+
+/* Phone 3: Skills UI */
+.mock-phone-skills {
+  align-items: center;
+  justify-content: center;
+}
+.mock-p-orbit-center {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #a855f7, #6366f1);
+  box-shadow: 0 0 15px rgba(168,85,247,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  z-index: 2;
+}
+.mock-p-orbit-nodes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.mock-p-orbit-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-cyan);
+  box-shadow: 0 0 6px var(--color-cyan);
+}
+.mock-p-orbit-node.n1 { top: 35%; left: 25%; background: var(--color-purple); box-shadow: 0 0 6px var(--color-purple); }
+.mock-p-orbit-node.n2 { top: 65%; left: 75%; }
+.mock-p-orbit-node.n3 { top: 25%; left: 65%; background: #facc15; box-shadow: 0 0 6px #facc15; }
+
+/* Phone 4: Projects UI */
+.mock-phone-projects {
+  justify-content: space-between;
+}
+.mock-p-project-card {
+  flex-grow: 1;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(168,85,247,0.15);
+  border-radius: 12px;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+.mock-p-proj-img {
+  font-size: 2rem;
+}
+.mock-p-proj-title {
+  font-size: 0.55rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Phone 5: Contact UI */
+.mock-phone-contact {
+  align-items: center;
+  justify-content: space-between;
+}
+.mock-p-rocket-graphic {
+  font-size: 3rem;
+  margin-top: 30px;
+  filter: drop-shadow(0 0 10px rgba(168,85,247,0.5));
+}
+.mock-p-btn-glow {
+  width: 100%;
+  text-align: center;
+  background: var(--gradient-primary);
+  font-size: 0.5rem;
+  font-weight: 700;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: var(--glow-purple);
+}
+
+@media (max-width: 992px) {
+  .phones-container {
+    gap: 15px;
+  }
+  .phone-frame {
+    width: 170px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-preview {
+    padding: var(--space-xl) 0;
+  }
+  .phones-container {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    justify-items: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .phones-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

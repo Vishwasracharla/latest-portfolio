@@ -1,0 +1,42 @@
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+
+p {
+  font-size: var(--fs-body);
+  color: var(--color-text-secondary);
+}
+
+.text-lg {
+  font-size: var(--fs-body-lg);
+}
+
+.text-gradient {
+  background: var(--gradient-aurora);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.split-line,
+.split-word,
+.split-char {
+  will-change: transform, opacity;
+}

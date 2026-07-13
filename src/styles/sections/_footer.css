@@ -1,0 +1,23 @@
+.footer {
+  padding: var(--space-lg) 0;
+  text-align: center;
+  border-top: 1px solid var(--glass-border);
+}
+
+.footer-portrait {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+.footer-portrait .hero-portrait-fallback {
+  font-size: 1rem;
+}
+
+.footer-credit {
+  margin-top: var(--space-sm);
+  font-size: var(--fs-small);
+  color: var(--color-text-secondary);
+}

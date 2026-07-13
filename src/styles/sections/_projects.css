@@ -1,0 +1,383 @@
+/* ═══════ 05 Projects Showcase ═══════ */
+.projects {
+  position: relative;
+  background: radial-gradient(circle at 90% 20%, rgba(120, 50, 220, 0.05) 0%, transparent 60%),
+              #050816;
+  padding: var(--space-2xl) 0;
+  overflow: hidden;
+}
+
+.projects-slider-container {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: var(--space-xl) auto 0;
+}
+
+.projects-track-3d {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  perspective: 1200px;
+  min-height: 480px;
+}
+
+.project-card-3d {
+  flex: 0 0 460px;
+  height: 440px;
+  position: relative;
+  transition: transform 0.6s var(--ease-out), opacity 0.6s var(--ease-out);
+  cursor: pointer;
+  transform-style: preserve-3d;
+}
+
+/* Browser Mockup Frame styling */
+.project-mockup-frame {
+  width: 100%;
+  height: 100%;
+  background: #080b14;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.7), 0 0 25px rgba(168,85,247,0.06);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out);
+  transform-style: preserve-3d;
+}
+
+.project-card-3d.active .project-mockup-frame {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 20px 55px rgba(0,0,0,0.85), 0 0 35px rgba(168,85,247,0.18);
+}
+
+.mock-browser-header {
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mock-browser-dots {
+  display: flex;
+  gap: 6px;
+}
+
+.mock-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.mock-dot.red { background: #ff5f56; }
+.mock-dot.yellow { background: #ffbd2e; }
+.mock-dot.green { background: #27c93f; }
+
+.mock-browser-address {
+  flex-grow: 1;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  color: #64748b;
+  text-align: center;
+}
+
+.mock-browser-content {
+  flex-grow: 1;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shopinity Custom UI Mockup */
+.mock-ui-shop {
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mock-shop-nav {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-purple);
+  letter-spacing: 0.1em;
+}
+.mock-shop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  flex-grow: 1;
+}
+.mock-shop-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.03);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+/* Personalized Gift UI Mockup */
+.mock-ui-gift {
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.mock-gift-hero {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-cyan);
+}
+.mock-gift-grid {
+  display: flex;
+  gap: 8px;
+}
+.mock-gift-item {
+  font-size: 0.6rem;
+  padding: 4px 8px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 4px;
+  color: #94a3b8;
+}
+.mock-gift-item.active {
+  border-color: var(--color-purple);
+  color: white;
+  background: rgba(168,85,247,0.1);
+}
+.mock-gift-bubble {
+  background: rgba(168, 85, 247, 0.05);
+  border: 1px solid rgba(168, 85, 247, 0.12);
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 0.6rem;
+  color: #a855f7;
+  font-style: italic;
+  margin-top: 10px;
+}
+
+/* Caption Generator UI Mockup */
+.mock-ui-caption {
+  height: 100%;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+}
+.mock-cap-img-placeholder {
+  height: 120px;
+  background: rgba(255,255,255,0.02);
+  border: 1.5px dashed rgba(255,255,255,0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: #64748b;
+}
+.mock-cap-bar {
+  background: rgba(6, 182, 212, 0.05);
+  border: 1px solid rgba(6, 182, 212, 0.15);
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 0.6rem;
+  color: var(--color-cyan);
+}
+
+/* Glass Details Panel overlaying the Mockup Frame */
+.project-details-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: rgba(10, 15, 36, 0.85);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transform: translateZ(55px); /* 3D pop effect */
+  transition: border-color 0.6s var(--ease-out), box-shadow 0.6s var(--ease-out);
+}
+
+.project-card-3d.active .project-details-overlay {
+  border-color: rgba(168, 85, 247, 0.4);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.6), 0 0 25px rgba(168, 85, 247, 0.15);
+}
+
+/* 3D sliding cards positions */
+.project-card-3d.active {
+  transform: translateZ(100px);
+  z-index: 5;
+  opacity: 1;
+}
+
+.project-card-3d.prev {
+  transform: rotateY(35deg) translateZ(-80px) translateX(-50px);
+  z-index: 3;
+  opacity: 0.45;
+}
+
+.project-card-3d.next {
+  transform: rotateY(-35deg) translateZ(-80px) translateX(50px);
+  z-index: 3;
+  opacity: 0.45;
+}
+
+.project-card-3d.hidden {
+  display: none;
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.project-emoji-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.project-category {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-cyan);
+}
+
+.project-card-3d h3 {
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.project-description {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.project-stack-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.project-stack-pill {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: #94a3b8;
+  padding: 3px 8px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 4px;
+}
+
+.project-card-3d.active .project-stack-pill {
+  border-color: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+}
+
+.project-action-btn {
+  align-self: flex-start;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-white);
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: rgba(168, 85, 247, 0.1);
+  border: 1.5px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 10px rgba(168,85,247,0.1);
+  transition: background 0.3s var(--ease-out), border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+  text-decoration: none;
+}
+
+.project-card-3d.active .project-action-btn {
+  background: var(--gradient-primary);
+  border-color: transparent;
+  box-shadow: var(--glow-purple);
+}
+
+.project-card-3d.active .project-action-btn:hover {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Slider indicators */
+.projects-nav-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: var(--space-lg);
+}
+
+.project-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  cursor: pointer;
+  transition: background 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.project-dot.active {
+  background: var(--color-purple);
+  transform: scale(1.3);
+  box-shadow: 0 0 8px rgba(168, 85, 247, 0.8);
+}
+
+@media (max-width: 992px) {
+  .project-card-3d {
+    flex: 0 0 380px;
+    height: 380px;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-track-3d {
+    flex-direction: column;
+    min-height: auto;
+    gap: 20px;
+  }
+  .project-card-3d {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+  .project-dot {
+    display: none;
+  }
+}

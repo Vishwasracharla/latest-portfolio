@@ -1,0 +1,86 @@
+@import './base/_variables.css';
+@import './base/_reset.css';
+@import './base/_typography.css';
+@import './base/_accessibility.css';
+
+@import './components/_glass.css';
+@import './components/_buttons.css';
+@import './components/_cursor.css';
+@import './components/_loader.css';
+@import './components/_scroll-progress.css';
+@import './components/_navigation.css';
+
+@import './sections/_hero.css';
+@import './sections/_about.css';
+@import './sections/_skills-galaxy.css';
+@import './sections/_experience.css';
+@import './sections/_projects.css';
+@import './sections/_tech-wall.css';
+@import './sections/_achievements.css';
+@import './sections/_contact.css';
+@import './sections/_mobile-preview.css';
+@import './sections/_footer.css';
+
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+#app {
+  position: relative;
+  z-index: var(--z-content);
+}
+
+.bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-bg);
+  pointer-events: none;
+}
+
+.section {
+  position: relative;
+  width: 100%;
+  padding: var(--space-xl) 0;
+  border-top: 1px solid rgba(168, 85, 247, 0.12);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  margin-bottom: var(--space-lg);
+  border-left: 2px solid var(--color-purple);
+  padding-left: 12px;
+}
+
+.section-title.text-center {
+  justify-content: center;
+  border-left: none;
+  padding-left: 0;
+}
+
+.section-number {
+  color: var(--color-purple);
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+.container {
+  width: var(--container-width);
+  margin-inline: auto;
+}
