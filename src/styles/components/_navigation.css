@@ -1,23 +1,25 @@
-/* Header styles */
 .header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 90px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
-  z-index: var(--z-nav);
+  z-index: 1000;
+  background: rgba(3, 5, 12, 0.82);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1.5px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   transition: background var(--dur-fast) var(--ease-out), backdrop-filter var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
-  border-bottom: 1px solid transparent;
 }
 
 .header.scrolled {
-  background: rgba(5, 8, 22, 0.75);
-  backdrop-filter: blur(20px);
-  border-color: var(--glass-border);
+  background: rgba(3, 5, 12, 0.92);
+  border-color: rgba(168, 85, 247, 0.4);
 }
 
 .header-logo {

@@ -24,6 +24,34 @@ export class Experience {
       node.className = 'timeline-item-node';
       const circle = document.createElement('span');
       circle.className = 'timeline-node-circle';
+
+      // Define SVGs for different nodes
+      let iconSvg = '';
+      if (exp.company.includes('Mobius')) {
+        iconSvg = `
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+          </svg>
+        `;
+      } else if (exp.company.includes('Fresher')) {
+        iconSvg = `
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="11" width="18" height="10" rx="2"></rect>
+            <circle cx="12" cy="5" r="2"></circle>
+            <path d="M12 7v4M8 16h.01M16 16h.01M6 16h.01M18 16h.01"></path>
+          </svg>
+        `;
+      } else {
+        // Academy / EduSkills / school
+        iconSvg = `
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+            <path d="M6 12v5c0 2 2 3 6 3s6-1 6-3v-5"></path>
+          </svg>
+        `;
+      }
+      circle.innerHTML = iconSvg;
       node.appendChild(circle);
 
       const card = document.createElement('div');

@@ -125,6 +125,62 @@ const ICONS = {
     <path d="M12 2L2 7.8v10.4L12 22l10-5.8V7.8L12 2z" fill="#4B32C3" fill-opacity="0.15" stroke="#4B32C3" stroke-width="1.5"/>
     <path d="M12 5.5L4.5 10v5.5L12 20l7.5-4.5V10L12 5.5z" fill="#4B32C3"/>
     <path d="M8.5 12h7M12 8.5v7" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`,
+
+  gemini: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gemini-grad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#4285F4"/>
+        <stop offset="0.5" stop-color="#9b59f5"/>
+        <stop offset="1" stop-color="#00c4cc"/>
+      </linearGradient>
+    </defs>
+    <path d="M12 2C10 7 7 10 2 12c5 2 8 5 10 10 2-5 5-8 10-10-5-2-8-5-10-10z" fill="url(#gemini-grad)"/>
+  </svg>`,
+
+  geminiAI: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gemi2-grad" x1="0" y1="0" x2="24" y2="24" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#4285F4"/>
+        <stop offset="1" stop-color="#9b59f5"/>
+      </linearGradient>
+    </defs>
+    <path d="M12 2C10 7 7 10 2 12c5 2 8 5 10 10 2-5 5-8 10-10-5-2-8-5-10-10z" fill="url(#gemi2-grad)"/>
+  </svg>`,
+
+  aws: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 13.5c-1.5.5-2.5 1.5-2.5 3C4.5 18.3 6 19.5 8 19.5c.7 0 1.4-.1 2-.3" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M17 13.5c1.5.5 2.5 1.5 2.5 3 0 1.8-1.5 3-3.5 3-.7 0-1.4-.1-2-.3" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M8.5 16.5c0-3 1.5-5.5 3.5-7 2 1.5 3.5 4 3.5 7" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M7.5 9L5 6.5M12 8V5M16.5 9L19 6.5" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="5" cy="6" r="1.5" fill="#FF9900"/>
+    <circle cx="12" cy="4.5" r="1.5" fill="#FF9900"/>
+    <circle cx="19" cy="6" r="1.5" fill="#FF9900"/>
+  </svg>`,
+
+  express: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 12c0-5 3.5-9 9-9s9 4 9 9-3.5 9-9 9-9-4-9-9z" stroke="#aaa" stroke-width="1.2"/>
+    <path d="M7 9.5l4 4-4 4M13 17.5h4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`,
+
+  expressjs: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7 9.5l4 4-4 4M13 17.5h4" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="12" cy="12" r="10" stroke="#aaa" stroke-width="1.2"/>
+  </svg>`,
+
+  chartjs: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10" stroke="#FF6384" stroke-width="1.5"/>
+    <path d="M12 12L12 2A10 10 0 0 1 22 12z" fill="#FF6384" fill-opacity="0.6"/>
+    <path d="M12 12L2 12A10 10 0 0 1 12 2z" fill="#36A2EB" fill-opacity="0.6"/>
+    <path d="M12 12L19.07 17A10 10 0 0 1 2 12z" fill="#FFCE56" fill-opacity="0.6"/>
+  </svg>`,
+
+  tensorflow: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2L4 6.5v5L12 16l4-2.3V8.3L12 6V2z" fill="#FF6F00" fill-opacity="0.2"/>
+    <path d="M12 2v14l8-4.5v-5L12 2z" fill="#FF6F00" fill-opacity="0.4"/>
+    <path d="M12 2L4 6.5v5L12 16" stroke="#FF6F00" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M12 2l8 4.5v5L12 16" stroke="#FF9100" stroke-width="1.5" stroke-linejoin="round"/>
+    <path d="M12 16v6M8 18l4 4 4-4" stroke="#FF6F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>`
 };
 

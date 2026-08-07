@@ -16,9 +16,7 @@
 @import './sections/_experience.css';
 @import './sections/_projects.css';
 @import './sections/_tech-wall.css';
-@import './sections/_achievements.css';
 @import './sections/_contact.css';
-@import './sections/_mobile-preview.css';
 @import './sections/_footer.css';
 
 html.lenis {
@@ -84,3 +82,7 @@ html.lenis {
   width: var(--container-width);
   margin-inline: auto;
 }
+
+/* Clear the fixed left-side section-index rail (.sidebar-indicator) on
+   desktop widths, where the centered container's own margin can be too
+   thin to avoid overlapping hero/section text. */

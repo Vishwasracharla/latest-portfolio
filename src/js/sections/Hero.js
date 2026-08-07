@@ -3,14 +3,7 @@ import { isTouch } from '../utils/device.js';
 import { randomRange } from '../utils/math.js';
 import { getIconSvg } from '../utils/icons.js';
 
-const HERO_TECH = [
-  { name: 'React', icon: 'react', x: 20, y: 35 },
-  { name: 'Node.js', icon: 'nodejs', x: 25, y: 60 },
-  { name: 'Python', icon: 'python', x: 80, y: 75 },
-  { name: 'TypeScript', icon: 'typescript', x: 75, y: 30 },
-  { name: 'MongoDB', icon: 'mongodb', x: 82, y: 50 },
-  { name: 'Tailwind CSS', icon: 'tailwind', x: 18, y: 72 }
-];
+const HERO_TECH = [];
 
 export class Hero {
   constructor() {
@@ -137,8 +130,11 @@ export class Hero {
       .from('.hero-subtitle', { opacity: 0, y: 20, duration: 0.6 }, '-=0.5')
       .from('.hero-actions .btn', { opacity: 0, y: 20, stagger: 0.1, duration: 0.6 }, '-=0.4')
       .from(this.portrait, { opacity: 0, scale: 0.85, duration: 1.2, ease: 'power3.out' }, 0.2)
-      .from('.hero-portrait-glow', { opacity: 0, scale: 0.6, duration: 1.5 }, 0.2)
-      .from(this.nodes.map(n => n.el), { opacity: 0, scale: 0, stagger: 0.08, duration: 0.6, ease: 'back.out(1.5)' }, 0.5);
+      .from('.hero-portrait-glow', { opacity: 0, scale: 0.6, duration: 1.5 }, 0.2);
+
+    if (this.nodes.length > 0) {
+      tl.from(this.nodes.map(n => n.el), { opacity: 0, scale: 0, stagger: 0.08, duration: 0.6, ease: 'back.out(1.5)' }, 0.5);
+    }
   }
 
   bindFloat() {
