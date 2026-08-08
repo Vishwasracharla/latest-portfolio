@@ -5,8 +5,13 @@
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: radial-gradient(circle at 80% 30%, rgba(124, 58, 237, 0.08) 0%, transparent 60%),
-    #03050c;
+  background: 
+    radial-gradient(circle at 80% 30%, rgba(124, 58, 237, 0.08) 0%, transparent 60%),
+    linear-gradient(rgba(168, 85, 247, 0.015) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 85, 247, 0.015) 1px, transparent 1px),
+    url('/public/space-bg.png') no-repeat center center;
+  background-size: 100% 100%, 60px 60px, 60px 60px, cover;
+  background-position: center;
   padding-top: 160px;
   padding-bottom: 60px;
   box-sizing: border-box;
