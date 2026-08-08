@@ -130,10 +130,10 @@
 .hero-portrait {
   position: relative;
   z-index: 3;
-  width: 65%;
-  height: 80%;
+  width: 78%;
+  height: 88%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   overflow: visible;
 }
@@ -141,7 +141,8 @@
 .hero-portrait img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 24px;
   filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
 }
 
