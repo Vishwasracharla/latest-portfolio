@@ -42,6 +42,43 @@ export class Projects {
     this.initProjects();
     this.setupScrollTrigger();
     this.bindMouseInteraction();
+    this.refreshOnAssetsReady();
+  }
+
+  // The dynamically-injected project screenshots load asynchronously, after
+  // ScrollTrigger has already measured the page and computed the pin's
+  // start/end points. If a project image finishes loading a moment later,
+  // the true document height can differ from what was measured, so the
+  // pin can engage a little early/late — showing the section mid-settle
+  // (header clipped near the fixed nav) until something else happens to
+  // trigger a recalculation. Refreshing once every image (and the window)
+  // has actually loaded keeps the pin boundaries accurate from the start.
+  refreshOnAssetsReady() {
+    const imgs = Array.from(this.track.querySelectorAll('img'));
+    let pending = imgs.length;
+
+    const refresh = () => ScrollTrigger.refresh();
+
+    if (pending === 0) {
+      requestAnimationFrame(refresh);
+      return;
+    }
+
+    const onImageSettled = () => {
+      pending -= 1;
+      if (pending === 0) refresh();
+    };
+
+    imgs.forEach((img) => {
+      if (img.complete) {
+        onImageSettled();
+      } else {
+        img.addEventListener('load', onImageSettled, { once: true });
+        img.addEventListener('error', onImageSettled, { once: true });
+      }
+    });
+
+    window.addEventListener('load', refresh, { once: true });
   }
 
   initProjects() {
@@ -142,19 +179,6 @@ export class Projects {
       body.appendChild(rightPanel);
       slide.appendChild(body);
 
-      // ── BOTTOM ACTIONS: Live Demo + View Code ────────────────────────────
-      const actions = document.createElement('div');
-      actions.className = 'project-slide-actions';
-      actions.innerHTML = `
-        <a class="btn-demo-link" href="${proj.demo}" target="_blank" rel="noopener">
-          LIVE DEMO ➔
-        </a>
-        <a class="btn-github-link" href="${proj.github}" target="_blank" rel="noopener">
-          VIEW CODE ↻
-        </a>
-      `;
-      slide.appendChild(actions);
-
       this.track.appendChild(slide);
       this.cards.push(slide);
 
@@ -180,75 +204,103 @@ export class Projects {
   }
 
   setupScrollTrigger() {
-    this.horizontalScroll = gsap.to(this.track, {
-      x: () => -(this.track.scrollWidth - window.innerWidth),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: this.section,
-        pin: true,
-        scrub: true,
-        start: 'top top',
-        end: () => `+=${this.cards.length * 100}%`,
-        invalidateOnRefresh: true,
-        onUpdate: (self) => {
-          const rawIdx = self.progress * (PROJECTS.length - 1);
-          const index = Math.round(rawIdx);
-          this.currentIndex = index;
-          this.updateActiveTheme(index);
+    this.mm = gsap.matchMedia();
+
+    // DESKTOP QUERY: Pin and translate horizontally with snapping and flat animations
+    this.mm.add("(min-width: 901px)", () => {
+      this.horizontalScroll = gsap.to(this.track, {
+        x: () => -(this.cards.length - 1) * window.innerWidth,
+        ease: 'none',
+        scrollTrigger: {
+          trigger: this.section,
+          pin: true,
+          scrub: true,
+          snap: {
+            snapTo: 1 / (PROJECTS.length - 1),
+            duration: 0.5,
+            ease: 'power1.inOut',
+            delay: 0.05
+          },
+          start: 'top top',
+          end: () => `+=${this.cards.length * 100}%`,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            const rawIdx = self.progress * (PROJECTS.length - 1);
+            const index = Math.round(rawIdx);
+            this.currentIndex = index;
+            this.updateActiveTheme(index);
+          }
         }
-      }
+      });
+
+      // Per-slide cinematic entrance/exit transitions
+      this.cards.forEach((slide, idx) => {
+        const frame = slide.querySelector('.project-frame');
+        const header = slide.querySelector('.project-slide-header');
+        const leftPanel = slide.querySelector('.project-panel-left');
+        const rightPanel = slide.querySelector('.project-panel-right');
+        const pedestal = slide.querySelector('.project-pedestal');
+
+        // Initial hidden state
+        gsap.set(frame, { scale: 0.92, opacity: 0.5, filter: 'blur(10px)' });
+        gsap.set([header, leftPanel, rightPanel], { opacity: 0, y: 20 });
+        gsap.set(pedestal, { opacity: 0, scaleX: 0.4 });
+
+        if (idx === 0) {
+          gsap.set(frame, { scale: 1, opacity: 1, filter: 'blur(0px)' });
+          gsap.set([header, leftPanel, rightPanel], { opacity: 1, y: 0 });
+          gsap.set(pedestal, { opacity: 1, scaleX: 1 });
+        }
+
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: slide,
+            containerAnimation: this.horizontalScroll,
+            start: 'left right',
+            end: 'right left',
+            scrub: true
+          }
+        });
+
+        tl.to(frame, {
+          keyframes: [
+            { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.3, ease: 'power2.out' },
+            { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.4 },
+            { scale: 0.92, opacity: 0.5, filter: 'blur(10px)', duration: 0.3, ease: 'power2.in' }
+          ]
+        });
+
+        tl.to([header, leftPanel, rightPanel], {
+          keyframes: [
+            { opacity: 1, y: 0, duration: 0.3, ease: 'power2.out' },
+            { opacity: 1, y: 0, duration: 0.4 },
+            { opacity: 0, y: -20, duration: 0.3, ease: 'power2.in' }
+          ]
+        }, 0);
+
+        tl.to(pedestal, {
+          keyframes: [
+            { opacity: 1, scaleX: 1, duration: 0.3, ease: 'power2.out' },
+            { opacity: 1, scaleX: 1, duration: 0.4 },
+            { opacity: 0, scaleX: 0.4, duration: 0.3, ease: 'power2.in' }
+          ]
+        }, 0);
+      });
     });
 
-    // Per-slide cinematic entrance/exit transitions
-    this.cards.forEach((slide, idx) => {
-      const frame = slide.querySelector('.project-frame');
-      const header = slide.querySelector('.project-slide-header');
-      const leftPanel = slide.querySelector('.project-panel-left');
-      const rightPanel = slide.querySelector('.project-panel-right');
-      const actions = slide.querySelector('.project-slide-actions');
-      const pedestal = slide.querySelector('.project-pedestal');
+    // MOBILE QUERY: Revert GSAP animations to let CSS handle layouts
+    this.mm.add("(max-width: 900px)", () => {
+      this.cards.forEach((slide) => {
+        const frame = slide.querySelector('.project-frame');
+        const header = slide.querySelector('.project-slide-header');
+        const leftPanel = slide.querySelector('.project-panel-left');
+        const rightPanel = slide.querySelector('.project-panel-right');
+        const pedestal = slide.querySelector('.project-pedestal');
 
-      // Initial hidden state
-      gsap.set(frame, { scale: 0.92, opacity: 0.5, filter: 'blur(10px)' });
-      gsap.set([header, leftPanel, rightPanel, actions], { opacity: 0, y: 20 });
-      gsap.set(pedestal, { opacity: 0, scaleX: 0.4 });
-
-      if (idx === 0) {
-        gsap.set(frame, { scale: 1, opacity: 1, filter: 'blur(0px)' });
-        gsap.set([header, leftPanel, rightPanel, actions], { opacity: 1, y: 0 });
-        gsap.set(pedestal, { opacity: 1, scaleX: 1 });
-      }
-
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: slide,
-          containerAnimation: this.horizontalScroll,
-          start: 'left right',
-          end: 'right left',
-          scrub: true
-        }
+        gsap.set([frame, header, leftPanel, rightPanel], {
+          clearProps: "all"
+        });
       });
-
-      tl.to(frame, {
-        keyframes: [
-          { scale: 1, opacity: 1, filter: 'blur(0px)', duration: 0.5, ease: 'power2.out' },
-          { scale: 0.92, opacity: 0.5, filter: 'blur(10px)', duration: 0.5, ease: 'power2.in' }
-        ]
-      });
-
-      tl.to([header, leftPanel, rightPanel, actions], {
-        keyframes: [
-          { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out' },
-          { opacity: 0, y: -20, duration: 0.4, ease: 'power2.in' }
-        ]
-      }, 0);
-
-      tl.to(pedestal, {
-        keyframes: [
-          { opacity: 1, scaleX: 1, duration: 0.4, ease: 'power2.out' },
-          { opacity: 0, scaleX: 0.4, duration: 0.4, ease: 'power2.in' }
-        ]
-      }, 0);
     });
   }
 
