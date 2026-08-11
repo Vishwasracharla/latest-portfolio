@@ -22,7 +22,7 @@ export class ProjectDetailOverlay {
         <p class="detail-subtitle"></p>
       </div>
 
-      <div class="detail-info-panel glass">
+      <div class="detail-info-panel glass" data-lenis-prevent>
         <div class="detail-divider"></div>
 
         <div class="detail-block detail-block-overview">
@@ -93,6 +93,7 @@ export class ProjectDetailOverlay {
     this.isOpen = true;
     this.sourceRefs = sourceRefs;
     document.body.classList.add('detail-open');
+    document.documentElement.classList.add('detail-open');
     getLenis()?.stop();
 
     this.populate(project);
@@ -226,6 +227,7 @@ export class ProjectDetailOverlay {
     this.isOpen = false;
     this.openTl?.kill();
     document.body.classList.remove('detail-open');
+    document.documentElement.classList.remove('detail-open');
 
     const tl = gsap.timeline({
       onComplete: () => {

@@ -10,8 +10,16 @@
   --active-accent-glow: rgba(168, 85, 247, 0.45);
 }
 
+/* Hide the OUTER page scrollbar entirely while the detail view is open —
+   only the panel's own internal scrollbar should be visible/usable.
+   `body` alone isn't enough: the native scrollbar reflects `html`'s
+   scrollable height, and dragging it would still move the page underneath
+   even though Lenis is stopped (Lenis only intercepts wheel/touch, not a
+   scrollbar-thumb drag). */
+html.detail-open,
 body.detail-open {
-  overflow: hidden;
+  overflow: hidden !important;
+  height: 100%;
 }
 
 /* Dark scrim behind the panel column only, so the full-bleed astronaut
