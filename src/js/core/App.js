@@ -13,6 +13,7 @@ import { Contact } from '../sections/Contact.js';
 import { Footer } from '../sections/Footer.js';
 import { initScrollProgress } from '../animations/scrollProgress.js';
 import { initSidebarIndicator } from '../animations/sidebarIndicator.js';
+import { initMobileNav } from '../navigation/MobileNav.js';
 
 export class App {
   init() {
@@ -44,5 +45,6 @@ export class App {
     new Footer();
     initScrollProgress();
     initSidebarIndicator();
+    initMobileNav();
   }
 }

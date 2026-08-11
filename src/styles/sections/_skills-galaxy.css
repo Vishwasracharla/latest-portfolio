@@ -364,14 +364,22 @@
   }
 
   .orbit-node-card {
-    padding: 5px 8px;
-    gap: 4px;
+    padding: 4px 7px;
+    gap: 3px;
     border-radius: 10px;
   }
 
+  .orbit-node-name {
+    font-size: 0.56rem;
+  }
+
   .orbit-node-icon {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .skills-orbit-container {
+    width: 96vw;
   }
 }
 

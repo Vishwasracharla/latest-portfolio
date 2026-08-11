@@ -3,7 +3,13 @@ import { getIconSvg } from '../utils/icons.js';
 import { randomRange } from '../utils/math.js';
 import { prefersReducedMotion } from '../utils/device.js';
 
-const RING_RADII = [20, 27, 34, 41, 48];
+const RING_RADII_DESKTOP = [20, 27, 34, 41, 48];
+// Cards keep roughly the same pixel width on small screens (padding/font
+// only shrink a little), but the container itself gets much narrower, so
+// the same percentage radii used on desktop push card edges past the
+// viewport. Pull rings in tighter below 576px.
+const RING_RADII_MOBILE = [14, 20, 26, 32, 38];
+const RING_RADII = window.innerWidth <= 576 ? RING_RADII_MOBILE : RING_RADII_DESKTOP;
 const VERTICAL_SCALE = 0.65;
 
 export class SkillsGalaxy {

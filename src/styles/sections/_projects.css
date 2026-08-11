@@ -515,6 +515,13 @@
     overflow: visible;
   }
 
+  /* Each slide already shows its own category/title — the global "05
+     PROJECTS SHOWCASE" eyebrow is fixed-positioned assuming the desktop
+     pinned layout and collides with the stacked mobile content instead. */
+  .projects-header {
+    display: none;
+  }
+
   .projects-sticky-wrapper {
     position: relative;
     height: auto;
@@ -580,6 +587,7 @@
 
   .projects-nav-dots {
     position: relative;
+    left: auto;
     bottom: auto;
     transform: none;
     margin-top: 24px;

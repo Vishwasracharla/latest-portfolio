@@ -194,8 +194,15 @@
   }
 
   .toolkit-bg-img {
-    object-position: center top;
-    opacity: 0.6;
+    /* The artwork has its own "MY TOOLKIT" heading baked into the top of
+       the image. On a narrow/tall mobile viewport `cover` crops the
+       image's LEFT/RIGHT (its aspect ratio is far wider than the
+       container's), not top/bottom — so no object-position value can
+       push that baked-in text out of view. Simplest clean fix: drop the
+       decorative image on mobile and keep the plain dark section
+       background; the real heading + toolkit cards are the actual
+       content anyway. */
+    display: none;
   }
 
   .toolkit-wrapper {
@@ -203,6 +210,9 @@
     inset: auto;
     height: auto;
     perspective: none;
+    /* .tech-wall-heading above is still position:absolute — give the
+       (now in-flow) grid enough clearance that it doesn't overlap it. */
+    margin-top: 130px;
   }
 
   .toolkit-grid {
