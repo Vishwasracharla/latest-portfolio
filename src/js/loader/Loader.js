@@ -48,13 +48,7 @@ export class Loader {
   }
 
   exit() {
-    const tl = gsap.timeline({
-      onComplete: () => {
-        this.el.remove();
-        this.curtain.remove();
-        this.onComplete?.();
-      },
-    });
+    const tl = gsap.timeline();
 
     tl.to(this.el.querySelectorAll('.char'), {
       y: '-110%',
@@ -72,7 +66,24 @@ export class Loader {
       .set(this.curtain, { transformOrigin: 'bottom' })
       .to(this.curtain, { scaleY: 1, duration: 0.5, ease: 'power4.in' })
       .set(this.el, { autoAlpha: 0 })
+      .call(() => {
+        // The curtain is now fully opaque, hiding everything. Build the
+        // rest of the page NOW — while it's still hidden — so every
+        // section's entrance animation (which snaps to its hidden "from"
+        // state the instant it's constructed) is already in that hidden
+        // state before the curtain lifts. Building it only after the
+        // curtain fully clears (the old behavior) let the page flash in
+        // fully visible for a frame, then instantly reset and re-fade —
+        // reading as "the page rendering twice".
+        this.el.remove();
+        this.onComplete?.();
+      })
       .set(this.curtain, { transformOrigin: 'top' })
-      .to(this.curtain, { scaleY: 0, duration: 0.7, ease: 'power4.inOut' });
+      .to(this.curtain, {
+        scaleY: 0,
+        duration: 0.7,
+        ease: 'power4.inOut',
+        onComplete: () => this.curtain.remove(),
+      });
   }
 }

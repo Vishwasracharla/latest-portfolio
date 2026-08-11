@@ -114,16 +114,18 @@
   transform: translateY(-2px);
 }
 
-/* Sidebar indicator styles */
+/* Sidebar indicator — a thin, light, violet-glow rail rather than bold
+   numerals: dim by default, only the active step and the traveling
+   progress pill carry real color/glow. */
 .sidebar-indicator {
   position: fixed;
-  left: 3rem;
+  left: 2.75rem;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.1rem;
   z-index: var(--z-nav);
 }
 
@@ -135,53 +137,60 @@
 
 .indicator-track {
   position: relative;
-  width: 2px;
-  height: 120px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 2px;
-  overflow: hidden;
+  width: 1px;
+  height: 130px;
+  margin-top: 0.4rem;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(168, 85, 247, 0.25) 12%,
+    rgba(168, 85, 247, 0.25) 88%,
+    transparent
+  );
 }
 
 .indicator-progress {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  width: 3px;
   height: 20%;
-  background: linear-gradient(to bottom, #a855f7, #3b82f6);
-  box-shadow: 0 0 10px rgba(168, 85, 247, 0.8);
-  border-radius: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(to bottom, #c084fc, #7c3aed);
+  box-shadow: 0 0 6px rgba(192, 132, 252, 0.9), 0 0 16px rgba(124, 58, 237, 0.5);
+  border-radius: 3px;
   transition: top var(--dur-med) var(--ease-out), height var(--dur-med) var(--ease-out);
 }
 
 .indicator-number {
   font-family: var(--font-heading);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.2);
-  transition: color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: rgba(168, 85, 247, 0.32);
+  transition: color var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), text-shadow var(--dur-fast) var(--ease-out);
   cursor: pointer;
 }
 
 .indicator-number.active {
-  color: #a855f7;
-  text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
-  transform: scale(1.2);
+  color: #c084fc;
+  text-shadow: 0 0 10px rgba(192, 132, 252, 0.7);
+  transform: scale(1.15);
 }
 
 .indicator-number:hover:not(.active) {
-  color: var(--color-white);
+  color: rgba(255, 255, 255, 0.65);
 }
 
-/* Left Sidebar Socials */
+/* Left Sidebar Socials — same light/thin/violet language as the indicator */
 .sidebar-socials {
   position: fixed;
-  left: 3rem;
+  left: 2.75rem;
   bottom: 3rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1rem;
   z-index: var(--z-nav);
 }
 
@@ -198,27 +207,27 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  border: 1px solid var(--glass-border);
-  background: var(--glass-bg);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+  background: rgba(124, 58, 237, 0.05);
   backdrop-filter: blur(10px);
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.5);
   transition: all var(--dur-fast) var(--ease-out);
   text-decoration: none;
 }
 
 .sidebar-social-link svg {
-  width: 18px;
-  height: 18px;
+  width: 15px;
+  height: 15px;
   fill: currentColor;
 }
 
 .sidebar-social-link:hover {
   color: var(--color-white);
-  border-color: #a855f7;
-  background: rgba(168, 85, 247, 0.1);
-  box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+  border-color: #c084fc;
+  background: rgba(168, 85, 247, 0.15);
+  box-shadow: 0 0 14px rgba(192, 132, 252, 0.45);
   transform: translateY(-3px) scale(1.05);
 }
