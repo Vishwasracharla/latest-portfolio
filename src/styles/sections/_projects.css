@@ -301,6 +301,30 @@
   justify-content: center;
 }
 
+.project-view-details-btn {
+  position: relative;
+  z-index: 30;
+  margin-top: 18px;
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  background: rgba(var(--active-accent-color-rgb), 0.12);
+  border: 1px solid rgba(var(--active-accent-color-rgb), 0.5);
+  cursor: pointer;
+  transition: background 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.project-view-details-btn:hover {
+  background: rgba(var(--active-accent-color-rgb), 0.25);
+  box-shadow: 0 0 24px rgba(var(--active-accent-color-rgb), 0.5);
+  transform: translateY(-2px);
+}
+
 .project-scene-wrapper {
   position: relative;
   width: 100%;

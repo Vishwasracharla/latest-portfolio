@@ -1,6 +1,7 @@
 import { gsap, ScrollTrigger } from '../core/GsapSetup.js';
 import { PROJECTS } from '../config/data.js';
 import { getIconSvg } from '../utils/icons.js';
+import { ProjectDetailOverlay } from './ProjectDetailOverlay.js';
 
 export class Projects {
   constructor() {
@@ -34,6 +35,7 @@ export class Projects {
     this.cards = [];
     this.dots = [];
     this.lastThemeIndex = -1;
+    this.detailOverlay = new ProjectDetailOverlay();
 
     // Space environment background
     this.section.style.background = "url('/5fc06aee-f047-405b-8c1f-beebe01ace9a.png') no-repeat center center";
@@ -159,6 +161,12 @@ export class Projects {
       center.appendChild(sceneWrapper);
       center.appendChild(pedestal);
 
+      const viewDetailsBtn = document.createElement('button');
+      viewDetailsBtn.type = 'button';
+      viewDetailsBtn.className = 'project-view-details-btn';
+      viewDetailsBtn.innerHTML = '<span>View Full Details</span>';
+      center.appendChild(viewDetailsBtn);
+
       // RIGHT PANEL — Tech Stack
       const rightPanel = document.createElement('div');
       rightPanel.className = 'project-panel project-panel-right';
@@ -181,6 +189,22 @@ export class Projects {
 
       this.track.appendChild(slide);
       this.cards.push(slide);
+
+      // Wired last so every ref (frame/header/panels/pedestal) already
+      // exists — the overlay animates these out of the live showcase and
+      // restores them on close, so it never feels like a separate screen.
+      const openDetail = () => {
+        this.detailOverlay.open(
+          { ...proj, __index: idx },
+          { frame, header, leftPanel, rightPanel, pedestal }
+        );
+      };
+      viewDetailsBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openDetail();
+      });
+      frame.style.cursor = 'pointer';
+      frame.addEventListener('click', openDetail);
 
       // Nav dot
       const dot = document.createElement('div');

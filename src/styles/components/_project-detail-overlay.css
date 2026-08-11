@@ -1,0 +1,326 @@
+.project-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-overlay);
+  display: none;
+  box-sizing: border-box;
+  background: #03050c;
+  --active-accent-color: #a855f7;
+  --active-accent-color-rgb: 168, 85, 247;
+  --active-accent-glow: rgba(168, 85, 247, 0.45);
+}
+
+body.detail-open {
+  overflow: hidden;
+}
+
+/* Dark scrim behind the panel column only, so the full-bleed astronaut
+   artwork stays fully visible on the left while text stays readable on
+   the right — not a separate boxed-off background. */
+.detail-backdrop {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to right, transparent 40%, rgba(2, 3, 8, 0.55) 62%, rgba(2, 3, 8, 0.88) 100%);
+  pointer-events: none;
+}
+
+.detail-back-top {
+  position: absolute;
+  top: 96px;
+  left: 32px;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 100px;
+  background: rgba(5, 4, 16, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: border-color 0.3s var(--ease-out), background 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.detail-back-top:hover {
+  border-color: var(--active-accent-color);
+  background: rgba(var(--active-accent-color-rgb), 0.2);
+  transform: translateX(-3px);
+}
+
+.detail-close {
+  position: absolute;
+  top: 96px;
+  right: 32px;
+  z-index: 20;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-color 0.3s var(--ease-out), background 0.3s var(--ease-out), transform 0.3s var(--ease-out);
+}
+
+.detail-close:hover {
+  border-color: var(--active-accent-color);
+  background: rgba(var(--active-accent-color-rgb), 0.15);
+  transform: rotate(90deg);
+}
+
+/* ── Astronaut stage: the artwork (astronaut + portal + stars, already
+   baked in) fills the ENTIRE overlay as a true full-bleed background —
+   the info panel floats on top of it, not beside it in its own box. ── */
+.detail-astronaut-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.detail-astronaut-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+  display: block;
+  animation: astronaut-float 6s ease-in-out infinite;
+}
+
+@keyframes astronaut-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* ── Heading + panel float over the image, right-aligned ── */
+.detail-heading-block {
+  position: absolute;
+  z-index: 2;
+  top: 156px;
+  right: clamp(24px, 5vw, 64px);
+  width: min(460px, 92vw);
+}
+
+.detail-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--active-accent-color);
+  margin-bottom: 10px;
+}
+
+.detail-number {
+  opacity: 0.6;
+}
+
+.detail-number::after {
+  content: '/';
+  margin-left: 10px;
+  opacity: 0.5;
+}
+
+.detail-title {
+  font-family: var(--font-heading);
+  font-size: clamp(1.6rem, 2.6vw, 2.3rem);
+  font-weight: 800;
+  color: var(--color-white);
+  margin: 0 0 10px 0;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.detail-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Info panel: overview / features / tech / actions / back ── */
+.detail-info-panel {
+  position: absolute;
+  z-index: 2;
+  top: 276px;
+  right: clamp(24px, 5vw, 64px);
+  bottom: 40px;
+  width: min(460px, 92vw);
+  overflow-y: auto;
+  padding: 24px 28px 26px;
+  border-radius: 22px;
+  border-color: rgba(var(--active-accent-color-rgb), 0.28);
+  box-shadow: 0 0 40px rgba(var(--active-accent-color-rgb), 0.12);
+  scrollbar-width: thin;
+}
+
+.detail-divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(var(--active-accent-color-rgb), 0.35), transparent);
+  margin: 4px 0 18px 0;
+}
+
+.detail-info-panel .detail-divider:last-of-type {
+  margin: 18px 0 16px 0;
+}
+
+.detail-block {
+  margin-bottom: 20px;
+}
+
+.detail-block-label {
+  font-family: var(--font-body);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--active-accent-color);
+  margin: 0 0 10px 0;
+}
+
+.detail-overview {
+  font-family: var(--font-body);
+  font-size: 0.83rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+.detail-built-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.detail-built-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.detail-check {
+  flex-shrink: 0;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.58rem;
+  margin-top: 0.15em;
+  background: rgba(var(--active-accent-color-rgb), 0.15);
+  border: 1px solid var(--active-accent-color);
+  color: var(--active-accent-color);
+  box-shadow: 0 0 8px rgba(var(--active-accent-color-rgb), 0.4);
+}
+
+.detail-tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.detail-tech-chip {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 100px;
+  background: rgba(var(--active-accent-color-rgb), 0.1);
+  border: 1px solid rgba(var(--active-accent-color-rgb), 0.3);
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.detail-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.detail-actions .btn {
+  padding: 0.7rem 1.3rem;
+  font-size: 0.72rem;
+}
+
+.detail-back-btn {
+  display: block;
+  margin: 16px 0 0 auto;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: color 0.3s var(--ease-out);
+}
+
+.detail-back-btn:hover {
+  color: var(--active-accent-color);
+}
+
+@media (max-width: 900px) {
+  /* Full-bleed absolute positioning only works with room to spare — on
+     mobile the image becomes a normal top banner and everything below it
+     flows in-order: title, astronaut, info panel, back. */
+  /* NOTE: no `display` here — that stays governed by JS (none when
+     closed, flex when open). Redeclaring it unconditionally in a media
+     query beats the base `display: none` at any matching viewport width,
+     which is exactly the bug that made this permanently visible before. */
+  .project-detail-overlay {
+    flex-direction: column;
+    padding: 150px 5vw 32px;
+    overflow-y: auto;
+    gap: 16px;
+  }
+
+  .detail-backdrop {
+    display: none;
+  }
+
+  .detail-astronaut-stage {
+    position: relative;
+    order: 2;
+    height: 38vh;
+    min-height: 260px;
+    border-radius: 18px;
+  }
+
+  .detail-heading-block {
+    position: static;
+    order: 1;
+    width: 100%;
+    text-align: center;
+  }
+
+  .detail-info-panel {
+    position: static;
+    order: 3;
+    width: 100%;
+    max-height: none;
+  }
+}

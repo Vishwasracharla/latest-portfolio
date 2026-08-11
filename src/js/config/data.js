@@ -210,11 +210,27 @@ export const PROJECTS = [
     image: '/aicoach.png',
     color: '#a855f7',
     colorRgb: '168, 85, 247',
-    glow: 'rgba(168, 85, 247, 0.45)'
+    glow: 'rgba(168, 85, 247, 0.45)',
+    overview:
+      'AI-powered coaching and assessment platform providing personalized coaching sessions, automated assessments, competency tracking, and performance analytics.',
+    myRole:
+      'AI Full Stack Developer — contributed to frontend, backend APIs, AI workflows, authentication, reporting, and data visualization.',
+    whatIBuilt: [
+      'Developed responsive coaching dashboards and session interfaces using React.js.',
+      'Built and integrated Python REST APIs for sessions, assessments, and reporting.',
+      'Integrated AI Agents and LLMs for assessment generation and evaluation workflows.',
+      'Implemented competency tracking and performance analytics.',
+      'Integrated authentication using Keycloak/Auth0.',
+      'Developed charts, visualizations, and PDF reports for coaching insights.'
+    ],
+    detailTechStack: [
+      'React.js', 'JavaScript', 'Tailwind CSS', 'Python', 'REST APIs',
+      'AI Agents', 'LLMs', 'RAG', 'Chart.js', 'Cytoscape', 'Keycloak/Auth0'
+    ]
   },
   {
-    title: 'Tender Management System',
-    category: 'Government Platform',
+    title: 'Tender Evaluation & Vendor Management',
+    category: 'Enterprise Procurement Platform',
     subtitle: 'Smart Tendering. Transparent Evaluation. Better Decisions.',
     role: 'Full Stack Developer',
     duration: '4 Months',
@@ -234,11 +250,27 @@ export const PROJECTS = [
     image: '/tender.png',
     color: '#10b981',
     colorRgb: '16, 185, 129',
-    glow: 'rgba(16, 185, 129, 0.45)'
+    glow: 'rgba(16, 185, 129, 0.45)',
+    overview:
+      'AI-powered enterprise procurement platform for tender evaluation, vendor management, intelligent document processing, and procurement decision-making.',
+    myRole:
+      'AI Full Stack Developer — developed frontend applications, backend services, APIs, database integrations, AI workflows, and visualization features.',
+    whatIBuilt: [
+      'Developed interactive React.js dashboards for tender and vendor management.',
+      'Built API integrations and backend workflows using FastAPI and REST APIs.',
+      'Implemented vendor evaluation and intelligent document-processing workflows.',
+      'Built graph-based vendor/tender visualizations using Cytoscape and React Flow.',
+      'Implemented state and server-state management using Zustand and TanStack Query.',
+      'Integrated database services using Supabase and optimized application workflows.'
+    ],
+    detailTechStack: [
+      'React.js', 'TypeScript', 'Tailwind CSS', 'Python', 'FastAPI', 'REST APIs',
+      'Supabase', 'TanStack Query', 'Zustand', 'Cytoscape', 'React Flow', 'Recharts', 'ECharts'
+    ]
   },
   {
     title: 'Clinical Decision Support (CDS)',
-    category: 'Clinical Platform',
+    category: 'AI-Powered Healthcare Platform',
     subtitle: 'AI-Powered Insights for Better Patient Outcomes',
     role: 'Frontend Engineer',
     duration: '5 Months',
@@ -258,11 +290,28 @@ export const PROJECTS = [
     image: '/cds.png',
     color: '#3b82f6',
     colorRgb: '59, 130, 246',
-    glow: 'rgba(59, 130, 246, 0.45)'
+    glow: 'rgba(59, 130, 246, 0.45)',
+    overview:
+      'AI-powered Clinical Decision Support platform designed to help healthcare professionals analyze patient information, clinical data, diagnoses, medications, laboratory results, and clinical guidelines to support informed clinical decision-making.',
+    myRole:
+      'AI Full Stack Developer — worked across frontend development, backend APIs, patient data integration, AI workflows, clinical analytics, and knowledge graph visualization.',
+    whatIBuilt: [
+      'Developed responsive React.js interfaces for patient management, clinical workflows, dashboards, and decision-support screens.',
+      'Built and integrated Python/FastAPI REST APIs for patient data, clinical analysis, recommendations, and application workflows.',
+      'Implemented AI-assisted clinical suggestions, including ICD coding recommendations and clinical decision support.',
+      'Built interactive clinical knowledge graphs connecting patients, diagnoses, medications, labs, encounters, and clinical evidence.',
+      'Developed clinical judgment, diagnostic, medication, laboratory, and clinical guideline interfaces.',
+      'Integrated analytics, KPI dashboards, reports, authentication, and PDF generation for healthcare workflows.'
+    ],
+    detailTechStack: [
+      'React.js', 'TypeScript', 'Vite', 'Tailwind CSS', 'Python', 'FastAPI', 'REST APIs',
+      'Supabase', 'TanStack Query', 'Cytoscape', 'React Flow', 'ECharts', 'Recharts',
+      'Neo4j/Knowledge Graphs', 'LLMs', 'AI Suggestions', 'Three.js', 'Git'
+    ]
   },
   {
-    title: 'AI4IA Conference Platform',
-    category: 'UNESCO Event Platform',
+    title: 'AI4IA – AI-Powered Research & Video Generation',
+    category: 'AI Research & Video Platform',
     subtitle: 'Empowering Global Collaboration through AI & Innovation',
     role: 'Full Stack Intern',
     duration: '2 Months',
@@ -282,7 +331,23 @@ export const PROJECTS = [
     image: '/ai4ia.png',
     color: '#6366f1',
     colorRgb: '99, 102, 241',
-    glow: 'rgba(99, 102, 241, 0.45)'
+    glow: 'rgba(99, 102, 241, 0.45)',
+    overview:
+      "AI-powered research and video generation platform supporting UNESCO's Information for All Programme (IFAP). The platform enables semantic search, intelligent knowledge discovery, AI-generated storytelling, multilingual content, and automated documentary creation.",
+    myRole:
+      'AI Full Stack Developer — worked across frontend, backend, API development, database integration, and AI workflows.',
+    whatIBuilt: [
+      'Developed responsive React.js interfaces and reusable frontend components.',
+      'Built and integrated Python/FastAPI REST APIs for application workflows.',
+      'Integrated LLMs, AI Agents, and RAG for intelligent search and content generation.',
+      'Implemented Neo4j Knowledge Graphs for connected knowledge discovery.',
+      'Integrated video streaming and multilingual functionality.',
+      'Optimized API communication and application performance.'
+    ],
+    detailTechStack: [
+      'React.js', 'Vite', 'Tailwind CSS', 'Python', 'FastAPI', 'REST APIs',
+      'Supabase', 'Neo4j', 'LLMs', 'AI Agents', 'RAG', 'HLS.js', 'i18next'
+    ]
   }
 ];
 
