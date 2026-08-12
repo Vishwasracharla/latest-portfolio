@@ -181,7 +181,114 @@ const ICONS = {
     <path d="M12 2L4 6.5v5L12 16" stroke="#FF6F00" stroke-width="1.5" stroke-linejoin="round"/>
     <path d="M12 2l8 4.5v5L12 16" stroke="#FF9100" stroke-width="1.5" stroke-linejoin="round"/>
     <path d="M12 16v6M8 18l4 4 4-4" stroke="#FF6F00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>`
+  </svg>`,
+
+  fastapi: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="10" fill="#009688" fill-opacity="0.15" stroke="#009688" stroke-width="1.5"/>
+    <path d="M13 3.5L6.5 13H11l-2 7.5L17.5 11H13l2-7.5z" fill="#009688"/>
+  </svg>`,
+
+  restapis: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="3" y="5" width="18" height="5.5" rx="1.5" stroke="#a855f7" stroke-width="1.5"/>
+    <rect x="3" y="13.5" width="18" height="5.5" rx="1.5" stroke="#a855f7" stroke-width="1.5"/>
+    <circle cx="7" cy="7.75" r="1" fill="#a855f7"/>
+    <circle cx="7" cy="16.25" r="1" fill="#a855f7"/>
+    <path d="M11 7.75h7M11 16.25h7" stroke="#a855f7" stroke-width="1.3" stroke-linecap="round"/>
+  </svg>`,
+
+  aiagents: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="5" y="8" width="14" height="11" rx="2.5" stroke="#06b6d4" stroke-width="1.5"/>
+    <circle cx="9.5" cy="13.5" r="1.3" fill="#06b6d4"/>
+    <circle cx="14.5" cy="13.5" r="1.3" fill="#06b6d4"/>
+    <path d="M12 8V4.5M12 4.5h-2M12 4.5h2" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="12" cy="3.5" r="1.2" fill="#06b6d4"/>
+    <path d="M8 19v1.5M16 19v1.5" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`,
+
+  llms: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 4c-2.8 0-4.5 1.8-4.5 3.8 0 1-.5 1.5-1.2 2.1-.9.8-1.3 1.8-1.3 3.1 0 2.5 2 4.5 4.5 5v-1.5M12 4c2.8 0 4.5 1.8 4.5 3.8 0 1 .5 1.5 1.2 2.1.9.8 1.3 1.8 1.3 3.1 0 2.5-2 4.5-4.5 5v-1.5"
+      stroke="#a855f7" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M12 4v14M9.5 9.5h5M9 13h6" stroke="#a855f7" stroke-width="1.2" stroke-linecap="round"/>
+  </svg>`,
+
+  rag: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="3.5" width="9" height="12" rx="1.2" stroke="#3b82f6" stroke-width="1.4"/>
+    <path d="M6.5 6.5h4M6.5 9h4M6.5 11.5h2.5" stroke="#3b82f6" stroke-width="1.2" stroke-linecap="round"/>
+    <circle cx="15.5" cy="15.5" r="3.8" stroke="#06b6d4" stroke-width="1.4"/>
+    <path d="M18.2 18.2L21 21" stroke="#06b6d4" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>`,
+
+  knowledgegraphs: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="6" cy="6" r="2.2" fill="#a855f7"/>
+    <circle cx="18" cy="6" r="2.2" fill="#3b82f6"/>
+    <circle cx="12" cy="13" r="2.4" fill="#06b6d4"/>
+    <circle cx="6" cy="19" r="2.2" fill="#a855f7"/>
+    <circle cx="18" cy="19" r="2.2" fill="#3b82f6"/>
+    <path d="M7.6 7.2L10.5 11.5M16.4 7.2L13.5 11.5M10.2 14.6L7.4 17.4M13.8 14.6L16.6 17.4"
+      stroke="rgba(255,255,255,0.5)" stroke-width="1.1"/>
+  </svg>`,
+
+  sql: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="12" cy="5.5" rx="7.5" ry="2.5" stroke="#3b82f6" stroke-width="1.4"/>
+    <path d="M4.5 5.5v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-6" stroke="#3b82f6" stroke-width="1.4"/>
+    <path d="M4.5 11.5v6c0 1.4 3.4 2.5 7.5 2.5s7.5-1.1 7.5-2.5v-6" stroke="#3b82f6" stroke-width="1.4"/>
+  </svg>`,
+
+  neo4j: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="7" cy="17" r="3" fill="#008cc1"/>
+    <circle cx="16" cy="16" r="2.4" fill="#008cc1" fill-opacity="0.85"/>
+    <circle cx="12" cy="7" r="2.8" fill="#008cc1" fill-opacity="0.7"/>
+    <path d="M9.2 15.3L11 9.2M14 15.2L12.8 9.5" stroke="#008cc1" stroke-width="1.2"/>
+  </svg>`,
+
+  zustand: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="13" r="7" fill="#603814"/>
+    <circle cx="7" cy="6.5" r="2.3" fill="#603814"/>
+    <circle cx="17" cy="6.5" r="2.3" fill="#603814"/>
+    <circle cx="9.7" cy="12" r="1.1" fill="#f5d6a8"/>
+    <circle cx="14.3" cy="12" r="1.1" fill="#f5d6a8"/>
+    <path d="M10 15.5c.6.6 3.4.6 4 0" stroke="#f5d6a8" stroke-width="1.1" stroke-linecap="round"/>
+  </svg>`,
+
+  tanstackquery: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 3c2.5 3.5.5 5 0 7-.5-2-2.5-3.5 0-7z" fill="#ff4154"/>
+    <path d="M12 21c-5 0-8-3.2-8-7.2 0-3 2-5.3 4.6-6.3-1 2-1.1 4 .4 5.7 1-1.6 2.6-2 3-3.7.9 1.8 3 3 3 6 0 3-1.4 5.5-3 5.5z"
+      fill="#ff4154" fill-opacity="0.85"/>
+  </svg>`,
+
+  cloudfront: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M6.5 16a3.5 3.5 0 0 1-.5-6.96A5 5 0 0 1 15.9 8.1 4 4 0 0 1 17.5 16h-11z" fill="#FF9900" fill-opacity="0.85"/>
+    <path d="M9 19l3-3 3 3M12 16v5" stroke="#FF9900" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`,
+
+  githubactions: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="8" cy="8" r="4" stroke="#2088FF" stroke-width="1.4"/>
+    <path d="M6.8 6.6l2.6 1.4-2.6 1.4V6.6z" fill="#2088FF"/>
+    <circle cx="16" cy="16" r="4" stroke="#2088FF" stroke-width="1.4" opacity="0.6"/>
+    <path d="M14.8 14.6l2.6 1.4-2.6 1.4v-2.8z" fill="#2088FF" opacity="0.6"/>
+    <path d="M8 12v2a3 3 0 0 0 3 3h1" stroke="#2088FF" stroke-width="1.2" stroke-linecap="round"/>
+  </svg>`,
+
+  sonarqube: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="12" cy="12" r="9" stroke="#4E9BCD" stroke-width="1.5"/>
+    <path d="M8 13c0-2.5 1.8-4.5 4-4.5s4 2 4 4.5-1.8 4.5-4 4.5" stroke="#4E9BCD" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M8.5 16.5L7 18" stroke="#4E9BCD" stroke-width="1.4" stroke-linecap="round"/>
+  </svg>`,
+
+  ollama: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="12" cy="13" rx="6" ry="7" fill="#ffffff" fill-opacity="0.92"/>
+    <path d="M8 6.5c-.5-1.5-.2-3 .8-3.5M16 6.5c.5-1.5.2-3-.8-3.5" stroke="#ffffff" stroke-width="1.3" stroke-linecap="round"/>
+    <circle cx="9.5" cy="12" r="1" fill="#0a0f24"/>
+    <circle cx="14.5" cy="12" r="1" fill="#0a0f24"/>
+    <path d="M10 16c.7.5 3.3.5 4 0" stroke="#0a0f24" stroke-width="1" stroke-linecap="round"/>
+  </svg>`,
+
+  openai: `<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M12 2.5a4.2 4.2 0 0 0-4 5.6 4.2 4.2 0 0 0 0 7.8 4.2 4.2 0 0 0 8 0 4.2 4.2 0 0 0 0-7.8 4.2 4.2 0 0 0-4-5.6z"
+      stroke="#ffffff" stroke-width="1.3" stroke-linejoin="round"/>
+    <path d="M8 9.6l4 2.4 4-2.4M12 12v4.8" stroke="#ffffff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>`,
+
 };
 
 export function getIconSvg(name) {

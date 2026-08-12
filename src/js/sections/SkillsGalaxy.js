@@ -122,8 +122,8 @@ export class SkillsGalaxy {
   initOrbits() {
     if (!this.nodesWrapper) return;
 
-    // Distribute the 12 skills across 5 concentric rings (2,3,2,3,2)
-    const ringCounts = [2, 3, 2, 3, 2];
+    // Distribute the skills across 5 concentric rings
+    const ringCounts = [3, 4, 3, 4, 3];
     const orbits = [];
     let cursor = 0;
 

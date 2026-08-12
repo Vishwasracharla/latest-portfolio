@@ -9,14 +9,20 @@
 }
 
 /* Seamless top transition gradient from Projects section */
+/* The background artwork has its own "MY TOOLKIT" heading baked into the
+   top ~20% of the image, sitting right behind the real HTML heading and
+   reading as duplicated text. Rather than crop the image (no reliable
+   crop position hides it at every viewport), fade it out with a solid-to-
+   transparent scrim tall enough to fully cover that baked-in text band —
+   the illustration below (brain/figure/portal) stays visible either way. */
 .tech-wall::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100px;
-  background: linear-gradient(to bottom, rgba(3, 5, 12, 0.9), transparent);
+  height: 320px;
+  background: linear-gradient(to bottom, rgba(3, 5, 12, 1) 0%, rgba(3, 5, 12, 1) 45%, rgba(3, 5, 12, 0.85) 70%, transparent 100%);
   pointer-events: none;
   z-index: 5;
 }
@@ -29,6 +35,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center center;
+  opacity: 0.55;
   pointer-events: none;
   z-index: 0;
   display: block;

@@ -26,147 +26,47 @@ export const STATS = [
 ];
 
 export const SKILLS = [
-  {
-    name: 'React',
-    icon: 'react',
-    color: '#00d8ff',
-    angle: 0,
-    rating: 5,
-    experience: '2+ Years',
-    description: 'Frontend Development',
-    projects: ['Mobius Intelliboard', 'Portfolio', 'Shopinity']
-  },
-  {
-    name: 'TypeScript',
-    icon: 'typescript',
-    color: '#3178c6',
-    angle: 30,
-    rating: 5,
-    experience: '1.5+ Years',
-    description: 'Typed JavaScript',
-    projects: ['Mobius Intelliboard', 'Portfolio']
-  },
-  {
-    name: 'Node.js',
-    icon: 'nodejs',
-    color: '#339933',
-    angle: 60,
-    rating: 4,
-    experience: '1+ Years',
-    description: 'Backend Development',
-    projects: ['Fresher Bot', 'Shopinity']
-  },
-  {
-    name: 'Next.js',
-    icon: 'nextjs',
-    color: '#ffffff',
-    angle: 90,
-    rating: 4,
-    experience: '1+ Years',
-    description: 'Full Stack Framework',
-    projects: ['Portfolio', 'Fresher Bot']
-  },
-  {
-    name: 'Tailwind CSS',
-    icon: 'tailwind',
-    color: '#38bdf8',
-    angle: 120,
-    rating: 5,
-    experience: '2+ Years',
-    description: 'Utility-First CSS',
-    projects: ['Mobius Intelliboard', 'Shopinity']
-  },
-  {
-    name: 'Postman',
-    icon: 'postman',
-    color: '#ff6c37',
-    angle: 150,
-    rating: 4,
-    experience: '1+ Years',
-    description: 'API Testing & Tooling',
-    projects: ['Mobius Intelliboard', 'Shopinity']
-  },
-  {
-    name: 'Vercel',
-    icon: 'vercel',
-    color: '#ffffff',
-    angle: 180,
-    rating: 4,
-    experience: '1+ Years',
-    description: 'Deployment & Hosting',
-    projects: ['Portfolio', 'Shopinity']
-  },
-  {
-    name: 'Git',
-    icon: 'git',
-    color: '#f05032',
-    angle: 210,
-    rating: 5,
-    experience: '2+ Years',
-    description: 'Version Control System',
-    projects: ['Mobius Intelliboard', 'Portfolio']
-  },
-  {
-    name: 'GitHub',
-    icon: 'github',
-    color: '#ffffff',
-    angle: 240,
-    rating: 5,
-    experience: '2+ Years',
-    description: 'Collaboration & Hosting',
-    projects: ['Mobius Intelliboard', 'Portfolio']
-  },
-  {
-    name: 'Figma',
-    icon: 'figma',
-    color: '#a259ff',
-    angle: 270,
-    rating: 3,
-    experience: '1+ Years',
-    description: 'UI/UX Design Tool',
-    projects: ['Portfolio UI Design']
-  },
-  {
-    name: 'MongoDB',
-    icon: 'mongodb',
-    color: '#47a248',
-    angle: 300,
-    rating: 4,
-    experience: '1+ Years',
-    description: 'NoSQL Database',
-    projects: ['Fresher Bot', 'Shopinity']
-  },
-  {
-    name: 'JavaScript',
-    icon: 'javascript',
-    color: '#f7df1e',
-    angle: 330,
-    rating: 5,
-    experience: '2+ Years',
-    description: 'Web Programming',
-    projects: ['Mobius Intelliboard', 'Portfolio']
-  }
+  { name: 'React', icon: 'react', color: '#00d8ff', rating: 5, experience: '1+ Years', description: 'Frontend Development' },
+  { name: 'Next.js', icon: 'nextjs', color: '#ffffff', rating: 4, experience: '1+ Years', description: 'Full Stack Framework' },
+  { name: 'JavaScript', icon: 'javascript', color: '#f7df1e', rating: 5, experience: '1+ Years', description: 'Web Programming' },
+  { name: 'TypeScript', icon: 'typescript', color: '#3178c6', rating: 4, experience: '1+ Years', description: 'Typed JavaScript' },
+  { name: 'Python', icon: 'python', color: '#ffd43b', rating: 4, experience: '1+ Years', description: 'AI & Backend Scripting' },
+  { name: 'FastAPI', icon: 'fastapi', color: '#009688', rating: 4, experience: '1+ Years', description: 'Python API Framework' },
+  { name: 'Node.js', icon: 'nodejs', color: '#339933', rating: 4, experience: '1+ Years', description: 'Backend Development' },
+  { name: 'REST APIs', icon: 'restapis', color: '#a855f7', rating: 5, experience: '1+ Years', description: 'API Design & Integration' },
+  { name: 'AI Agents', icon: 'aiagents', color: '#06b6d4', rating: 4, experience: '1+ Years', description: 'Agentic AI Workflows' },
+  { name: 'LLMs', icon: 'llms', color: '#a855f7', rating: 4, experience: '1+ Years', description: 'Large Language Models' },
+  { name: 'RAG', icon: 'rag', color: '#3b82f6', rating: 4, experience: '1+ Years', description: 'Retrieval-Augmented Generation' },
+  { name: 'Knowledge Graphs', icon: 'knowledgegraphs', color: '#06b6d4', rating: 4, experience: '1+ Years', description: 'Graph-Based Knowledge Modeling' },
+  { name: 'MongoDB', icon: 'mongodb', color: '#47a248', rating: 4, experience: '1+ Years', description: 'NoSQL Database' },
+  { name: 'SQL', icon: 'sql', color: '#3b82f6', rating: 4, experience: '1+ Years', description: 'Relational Databases' },
+  { name: 'Neo4j', icon: 'neo4j', color: '#008cc1', rating: 4, experience: '1+ Years', description: 'Graph Database' },
+  { name: 'Zustand', icon: 'zustand', color: '#a3714a', rating: 4, experience: '1+ Years', description: 'React State Management' },
+  { name: 'TanStack Query', icon: 'tanstackquery', color: '#ff4154', rating: 4, experience: '1+ Years', description: 'Server-State Management' }
 ];
 
 export const TOOLKIT = [
-  { name: 'VS Code', icon: 'vscode' },
   { name: 'Git', icon: 'git' },
   { name: 'GitHub', icon: 'github' },
-  { name: 'Docker', icon: 'docker' },
+  { name: 'VS Code', icon: 'vscode' },
   { name: 'Postman', icon: 'postman' },
   { name: 'Figma', icon: 'figma' },
   { name: 'Jira', icon: 'jira' },
+  { name: 'Docker', icon: 'docker' },
+  { name: 'AWS', icon: 'aws' },
   { name: 'Vercel', icon: 'vercel' },
-  { name: 'Netlify', icon: 'netlify' },
-  { name: 'Linux', icon: 'linux' },
-  { name: 'npm', icon: 'npm' },
-  { name: 'ESLint', icon: 'eslint' }
+  { name: 'CloudFront', icon: 'cloudfront' },
+  { name: 'GitHub Actions', icon: 'githubactions' },
+  { name: 'SonarQube', icon: 'sonarqube' },
+  { name: 'Ollama', icon: 'ollama' },
+  { name: 'OpenAI', icon: 'openai' },
+  { name: 'Gemini', icon: 'gemini' }
 ];
 
 export const EXPERIENCE = [
   {
     company: 'Mobius by Gaian',
-    role: 'Frontend / Full Stack Developer',
+    role: 'AI Full Stack Developer',
     period: '2025 - Present',
     live: true,
     description: 'Working on Mobius Intelliboard, building scalable products and AI powered features.'
