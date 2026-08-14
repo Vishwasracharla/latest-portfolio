@@ -11,7 +11,7 @@ export const PROFILE = {
 
 export const TERMINAL_DATA = [
   { label: 'name', value: 'Racharla Vishwas' },
-  { label: 'role', value: 'Frontend Engineer' },
+  { label: 'role', value: 'AI Full Stack Developer' },
   { label: 'experience', value: '1+ Years' },
   { label: 'status', value: 'ONLINE!', status: true },
   { label: 'location', value: 'Hyderabad, India' },
@@ -172,7 +172,7 @@ export const PROJECTS = [
     title: 'Clinical Decision Support (CDS)',
     category: 'AI-Powered Healthcare Platform',
     subtitle: 'AI-Powered Insights for Better Patient Outcomes',
-    role: 'Frontend Engineer',
+    role: 'AI Full Stack Developer',
     duration: '5 Months',
     aboutTitle: 'AI-Powered Clinical Intelligence',
     aboutDesc: 'Advanced clinical decision support featuring real-time patient vitals monitoring, AI risk prediction, and diagnostic alerts for healthcare providers.',

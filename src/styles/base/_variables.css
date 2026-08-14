@@ -52,8 +52,8 @@
   --z-content: 10;
   --z-nav: 100;
   --z-overlay: 900;
-  --z-cursor: 950;
   --z-loader: 1000;
+  --z-cursor: 1100;
 
   --container-width: min(1400px, 92vw);
 }

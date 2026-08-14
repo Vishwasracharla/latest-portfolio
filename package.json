@@ -1,7 +1,7 @@
 {
   "name": "vish-portfolio",
   "version": "1.0.0",
-  "description": "Beyond Pixels — The Journey of a Frontend Engineer. Cinematic single-page portfolio for Racharla Vishwas.",
+  "description": "Beyond Pixels — The Journey of a AI Full Stack Developer. Cinematic single-page portfolio for Racharla Vishwas.",
   "type": "module",
   "scripts": {
     "dev": "vite",
