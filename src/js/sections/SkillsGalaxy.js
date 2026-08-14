@@ -29,7 +29,7 @@ export class SkillsGalaxy {
     if (orbitContainer) {
       // Create and prepend background image
       this.bgImg = document.createElement('img');
-      this.bgImg.src = '/ChatGPT Image Aug 6, 2026, 11_53_05 AM.png';
+      this.bgImg.src = '/ChatGPT Image Aug 6, 2026, 11_53_05 AM.webp';
       this.bgImg.className = 'skills-orbit-bg';
       this.bgImg.alt = 'Skills Orbit Background';
       orbitContainer.prepend(this.bgImg);

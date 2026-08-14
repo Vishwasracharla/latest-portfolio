@@ -6,7 +6,7 @@
     radial-gradient(circle at 85% 75%, rgba(168, 85, 247, 0.08) 0%, transparent 55%),
     linear-gradient(rgba(168, 85, 247, 0.012) 1px, transparent 1px),
     linear-gradient(90deg, rgba(168, 85, 247, 0.012) 1px, transparent 1px),
-    url('/public/space-bg.png') no-repeat center center;
+    url('/space-bg.webp') no-repeat center center;
   background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px, cover;
   background-position: center;
   padding: var(--space-2xl) 0;

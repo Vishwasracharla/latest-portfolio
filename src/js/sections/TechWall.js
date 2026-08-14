@@ -34,8 +34,29 @@ export class TechWall {
 
     this.initToolkit();
 
+    this.isInView = false;
     this.updateOrbit = this.updateOrbit.bind(this);
-    gsap.ticker.add(this.updateOrbit);
+
+    // This orbit recalculates every card's position on every single tick of
+    // the global GSAP ticker. Left unconditional, it runs forever — even
+    // while the user is still on Hero and has never scrolled anywhere near
+    // Toolkit — burning a continuous slice of every frame for the rest of
+    // the session. Only attach it to the ticker while the section is
+    // actually on screen.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          this.isInView = entry.isIntersecting;
+          if (this.isInView) {
+            gsap.ticker.add(this.updateOrbit);
+          } else {
+            gsap.ticker.remove(this.updateOrbit);
+          }
+        });
+      },
+      { threshold: 0.05 }
+    );
+    observer.observe(this.section);
 
     window.addEventListener('resize', () => {
       const wasDesktop = this.isDesktop;

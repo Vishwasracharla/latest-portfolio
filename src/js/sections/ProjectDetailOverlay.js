@@ -13,7 +13,7 @@ export class ProjectDetailOverlay {
       <button class="detail-close" type="button" aria-label="Close project details">✕</button>
 
       <div class="detail-astronaut-stage">
-        <img class="detail-astronaut-img" src="/ASTRANAUT-1.png" alt="" />
+        <img class="detail-astronaut-img" src="/ASTRANAUT-1.webp" alt="" />
       </div>
 
       <div class="detail-heading-block">

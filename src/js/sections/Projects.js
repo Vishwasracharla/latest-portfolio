@@ -38,7 +38,7 @@ export class Projects {
     this.detailOverlay = new ProjectDetailOverlay();
 
     // Space environment background
-    this.section.style.background = "url('/5fc06aee-f047-405b-8c1f-beebe01ace9a.png') no-repeat center center";
+    this.section.style.background = "url('/5fc06aee-f047-405b-8c1f-beebe01ace9a.webp') no-repeat center center";
     this.section.style.backgroundSize = 'cover';
 
     this.initProjects();
